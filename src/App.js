@@ -3,6 +3,7 @@ import { Model } from './components/model';
 import {Phone} from "./Series/phone";
 
 import './App.css';
+import { Android } from './Quantity/Quantity';
 
 function App() {
  
@@ -11,6 +12,13 @@ function App() {
       <header className="box">
       <Model />
       <Phone />
+      <Android name ="Samsung" >
+        <p>This is second phone</p>
+      </Android>
+
+      <Android name="LG "/>
+      <Android name="Xiaomi"/>
+      
       
       
         
