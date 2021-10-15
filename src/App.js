@@ -5,6 +5,7 @@ import react  from 'react';
 import './App.css';
 
 import {Header,Footer,Content} from "./components/layout/";
+import { LoginForm } from './components/LoginForm/LoginForm';
 
 function App() {
  
@@ -12,7 +13,8 @@ function App() {
     <div className="container">
     <Header/>
     <Content/>
-    <Footer/>
+    <LoginForm/>
+    {/* <Footer/> */}
  </div>
   );
 }
