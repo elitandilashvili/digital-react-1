@@ -1,30 +1,21 @@
 import react  from 'react';
-import { Model } from './components/model';
-import {Phone} from "./Series/phone";
+
+
 
 import './App.css';
-import { Android } from './Quantity/Quantity';
+
+import {Header,Footer,Content} from "./components/layout/";
+import { LoginForm } from './components/LoginForm/LoginForm';
 
 function App() {
  
   return (
     <div className="container">
-      <header className="box">
-      <Model />
-      <Phone />
-      <Android name ="Samsung" >
-        <p>This is second phone</p>
-      </Android>
-
-      <Android name="LG "/>
-      <Android name="Xiaomi"/>
-      
-      
-      
-        
-       
-      </header>
-    </div>
+    <Header/>
+    <Content/>
+    <LoginForm/>
+    {/* <Footer/> */}
+ </div>
   );
 }
 
