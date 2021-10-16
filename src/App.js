@@ -3,9 +3,12 @@ import react  from 'react';
 
 
 import './App.css';
+import { LoginForm } from './components/Forms/LoginForm';
 
 import {Header,Footer,Content} from "./components/layout/";
-import { LoginForm } from './components/LoginForm/LoginForm';
+
+
+
 
 function App() {
  
@@ -14,7 +17,10 @@ function App() {
     <Header/>
     <Content/>
     <LoginForm/>
-    {/* <Footer/> */}
+    
+    
+    
+    <Footer/>
  </div>
   );
 }
