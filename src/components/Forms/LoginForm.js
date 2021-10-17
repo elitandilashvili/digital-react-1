@@ -1,6 +1,9 @@
 
+import { CheckBox } from '../../Elements/CheckBox/CheckBox';
 import{EmailInput}from '../../Elements/EmailInput';
 import {PasswordInput} from'../../Elements/PasswordInput';
+
+
 
 
 export const LoginForm = (props) => {
@@ -31,8 +34,15 @@ export const LoginForm = (props) => {
             <p className="control">
               <button className="button is-success" type="submit">
                 Login
-              </button>
+              </button> <br/> <br/>
             </p>
+           
+             <form onSubmit={onSubmit}> 
+             <CheckBox/>
+              
+            
+              </form>
+
           </div>
         </form>
       );
