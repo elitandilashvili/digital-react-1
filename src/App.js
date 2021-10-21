@@ -3,9 +3,11 @@ import react  from 'react';
 
 
 import './App.css';
-import { LoginForm } from './components/Forms/LoginForm';
+// import { LoginForm } from './components/Forms/LoginForm';
 
-import {Header,Footer,Content} from "./components/layout/";
+import {Header,Footer} from "./components/layout/";
+import {Routes} from "./Routes";
+
 
 
 
@@ -15,8 +17,10 @@ function App() {
   return (
     <div className="container">
     <Header/>
-    <Content/>
-    <LoginForm/>
+    {/* <Content/> */}
+    <Routes/>
+
+    {/* <LoginForm/> */}
     
     
     

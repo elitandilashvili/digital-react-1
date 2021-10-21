@@ -1,31 +1,38 @@
+import { Link, NavLink } from "react-router-dom";
+import * as route from "../../constants/routs";
 
 
-export function Header(props){
+
+
+
+export function Header
+    (props){
     return(<nav className="navbar" role="navigation" aria-label="main navigation">
     <div className="navbar-brand">
-      <a className="navbar-item" href="https://bulma.io">
+      
+      <Link className="navbar-item" to="https://bulma.io" to={route.HOME_PATH}>
         <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28"/>
-      </a>
+      </Link>
   
-      <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <Link role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" to={route.HOME_PATH}>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
-      </a>
+      </Link>
     </div>
   
     <div id="navbarBasicExample" className="navbar-menu">
       <div className="navbar-start">
-        <a className="navbar-item">
+        <NavLink className="navbar-item" to ={route.HOME_PATH} activeClassName="">
           Home
-        </a>
+        </NavLink>
   
-        <a className="navbar-item">
-          Documentation
-        </a>
+        <NavLink className="navbar-item" to={route.DOCUMENTATION_PATH}>
+          Private info
+        </NavLink>
   
         <div className="navbar-item has-dropdown is-hoverable">
-          <a className="navbar-link">
+          <a className="navbar-link" >
             More
           </a>
   
@@ -50,12 +57,12 @@ export function Header(props){
       <div className="navbar-end">
         <div className="navbar-item">
           <div className="buttons">
-            <a className="button is-primary">
-              <strong>Sign up</strong>
-            </a>
-            <a className="button is-light">
+            <NavLink className="button is-primary" to={route.REGISTER_PATH}>
+              <strong>Register</strong>
+            </NavLink>
+            <NavLink className="button is-light" to={route.LOGIN_PATH}>
               Log in
-            </a>
+            </NavLink>
           </div>
         </div>
       </div>
