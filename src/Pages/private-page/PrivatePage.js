@@ -1,9 +1,9 @@
 
 
-export const PrivatePage =()=>{
+export const PrivatePage =({title=" Private page"})=>{
     return(
         <div className="column">
-            <h3 className="title">This is Private page </h3>
+            <h3 className="title"> {title} </h3>
 
         </div>
     );

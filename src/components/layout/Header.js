@@ -1,12 +1,48 @@
+import { useContext } from 'react';
+import { useEffect } from "react";
+import{AuthContext,AuthProvider}from "../../Providers/AuthProvider/AuthProvider";
 import { Link, NavLink } from "react-router-dom";
 import * as route from "../../constants/routs";
+import{useAuthContext}from "../../Providers/AuthProvider/AuthProvider";
 
 
 
 
 
-export function Header
-    (props){
+export function Header(){
+
+  const { loggedIn, logOut } = useAuthContext();
+
+  useEffect(() => {
+    console.log("HEADER RENDERING");
+  }, [loggedIn]);
+
+
+  const renderGuestLinks = () => {
+    return (
+      <div className="buttons">
+        <NavLink className="button is-primary" to={route.REGISTER_PATH}>
+          <strong>Register</strong>
+        </NavLink>
+        <NavLink className="button is-light" to={route.LOGIN_PATH}>
+          Log in
+        </NavLink>
+      </div>
+    );
+  };
+
+  const renderUserLinks = () => {
+    return (
+      <div className="buttons">
+        <button className="button is-primary" onClick={logOut}>
+          <strong>Log Out</strong>
+        </button>
+      </div>
+    );
+  };
+    
+    
+    
     return(<nav className="navbar" role="navigation" aria-label="main navigation">
     <div className="navbar-brand">
       
@@ -56,14 +92,9 @@ export function Header
   
       <div className="navbar-end">
         <div className="navbar-item">
-          <div className="buttons">
-            <NavLink className="button is-primary" to={route.REGISTER_PATH}>
-              <strong>Register</strong>
-            </NavLink>
-            <NavLink className="button is-light" to={route.LOGIN_PATH}>
-              Log in
-            </NavLink>
-          </div>
+        {loggedIn ? renderUserLinks() : renderGuestLinks()}
+        
+          
         </div>
       </div>
     </div>
