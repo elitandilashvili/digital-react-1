@@ -1,4 +1,6 @@
 {
-    "explorer.compactFolders": false
+    "explorer.compactFolders": false,
+    "editor.formatOnSaveMode": "file",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
     
 }
