@@ -1,20 +1,24 @@
 import React from 'react';
 import axios from 'axios';
+
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import { AuthProvider } from './Providers/AuthProvider/AuthProvider';
 import reportWebVitals from './reportWebVitals';
+import { ErrorBoundary } from './components/error-boundary/errorBoundary';
 
 axios.defaults.baseURL = process.env.REACT_APP_API_URL;
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <AuthProvider>
-        <App />
-      </AuthProvider>
+      <ErrorBoundary>
+        <AuthProvider>
+          <App />
+        </AuthProvider>
+      </ErrorBoundary>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')

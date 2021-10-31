@@ -1,11 +1,12 @@
 import PropTypes from 'prop-types';
 
-import { useState } from 'react';
 import { CounterValue } from '.';
+import { useLocalStorage } from '../../hooks/useLocalStorage';
 import CounterTitle from './CounterTitle';
+import { CounterAction } from '../Counter/counterAction';
 
 export function Counter({ initialValue }) {
-  const [count, setCount] = useState(initialValue);
+  const [count, setCount] = useLocalStorage('counter', initialValue);
 
   const addNumber = () => {
     setCount(count + 1);
@@ -25,8 +26,6 @@ export function Counter({ initialValue }) {
 
   return (
     <div className=" columns is-flex-direction-column">
-      <CounterTitle />
-
       <CounterValue value={count} />
 
       <div className="column">
@@ -44,9 +43,10 @@ export function Counter({ initialValue }) {
       </div>
 
       <div className="column">
-        <button className="button is-link" onClick={() => handleClick(4)}>
+        <CounterAction label="3" />
+        {/* <button className="button is-link" onClick={() => handleClick(4)}>
           +3
-        </button>
+        </button> */}
 
         <button className="button is-danger mx-2" onClick={resetNumber}>
           0
